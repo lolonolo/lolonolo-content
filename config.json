@@ -11,12 +11,6 @@
     "lolohaber": { "acik": true, "mesaj": "" }
   },
 
-  "bakim": {
-    "aktif": false,
-    "baslik": "",
-    "mesaj": ""
-  },
-
   "surum_uyarisi": {
     "aktif": false,
     "zorunlu": false,

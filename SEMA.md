@@ -116,11 +116,6 @@ o ekranı uzaktan kapatabilirsin:
 Kullanıcı o karta dokunduğunda hata ekranı yerine bu mesajı görür.
 Sorun çözülünce `true` yap. **Store onayı beklemene gerek kalmaz.**
 
-### `bakim` — genel bakım modu
-
-`aktif: true` yapılırsa uygulama açılışta tam ekran bakım mesajı gösterir.
-Sadece gerçekten her şey durduğunda kullan.
-
 ### `surum_uyarisi` — güncelleme çağrısı
 
 | Alan | Açıklama |
