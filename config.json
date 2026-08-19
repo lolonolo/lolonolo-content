@@ -1,0 +1,30 @@
+{
+  "sema_versiyonu": 1,
+  "guncelleme_tarihi": "2026-08-19",
+
+  "ekranlar": {
+    "sinav_merkezi": { "acik": true, "mesaj": "" },
+    "video_dersler": { "acik": true, "mesaj": "" },
+    "lolonolo_ai": { "acik": true, "mesaj": "" },
+    "puan_hesapla": { "acik": true, "mesaj": "" },
+    "sinav_takvimi": { "acik": true, "mesaj": "" },
+    "lolohaber": { "acik": true, "mesaj": "" }
+  },
+
+  "bakim": {
+    "aktif": false,
+    "baslik": "",
+    "mesaj": ""
+  },
+
+  "surum_uyarisi": {
+    "aktif": false,
+    "zorunlu": false,
+    "baslik": "Yeni sürüm yayında",
+    "mesaj": "Uygulamanın yeni sürümünde önemli iyileştirmeler var. Güncellemeni öneririz.",
+    "min_android_build": 0,
+    "min_ios_build": 0,
+    "android_link": "https://play.google.com/store/apps/details?id=com.lolonolo.ogrenmeyonetimsistemi",
+    "ios_link": "https://apps.apple.com/tr/app/id0000000000"
+  }
+}

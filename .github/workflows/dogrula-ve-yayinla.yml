@@ -1,0 +1,98 @@
+name: JSON Doğrula ve CDN Temizle
+
+# Her push'ta çalışır. İki iş yapar:
+#  1. JSON dosyaları geçerli mi kontrol eder — bozuksa hata verir.
+#  2. jsDelivr CDN önbelleğini temizler — yoksa değişiklik 12 saat görünmez.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  dogrula:
+    name: JSON geçerlilik kontrolü
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: JSON sözdizimi ve zorunlu alan kontrolü
+        run: |
+          python3 - <<'PY'
+          import json, sys, re, glob, os
+
+          hata = []
+
+          def kontrol_tarih(deger, yer):
+              if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", deger or ""):
+                  hata.append(f"{yer}: tarih 'YYYY-MM-DD' olmali, gelen: '{deger}'")
+
+          # --- takvim.json ---
+          if os.path.exists("takvim.json"):
+              with open("takvim.json", encoding="utf-8") as f:
+                  try:
+                      t = json.load(f)
+                  except json.JSONDecodeError as e:
+                      print(f"HATA: takvim.json bozuk JSON -> {e}")
+                      sys.exit(1)
+
+              KURUM = {"AUZEF", "ANADOLU", "ATA", "SEGEM"}
+              TIP   = {"VIZE","FINAL","BUTUNLEME","UCDERS","BASVURU","DUYURU"}
+              DURUM = {"kesinlesti", "tahmini"}
+
+              idler = set()
+              for i, k in enumerate(t.get("kayitlar", [])):
+                  yer = f"takvim.json kayit[{i}] (id={k.get('id','YOK')})"
+                  for alan in ("id","kurum","baslik","baslangic","durum","tip"):
+                      if not k.get(alan):
+                          hata.append(f"{yer}: '{alan}' zorunlu ve bos olamaz")
+                  if k.get("id") in idler:
+                      hata.append(f"{yer}: id tekrar ediyor")
+                  idler.add(k.get("id"))
+                  if k.get("kurum") not in KURUM:
+                      hata.append(f"{yer}: kurum '{k.get('kurum')}' gecersiz. Gecerli: {sorted(KURUM)}")
+                  if k.get("tip") not in TIP:
+                      hata.append(f"{yer}: tip '{k.get('tip')}' gecersiz. Gecerli: {sorted(TIP)}")
+                  if k.get("durum") not in DURUM:
+                      hata.append(f"{yer}: durum '{k.get('durum')}' gecersiz. Gecerli: {sorted(DURUM)}")
+                  kontrol_tarih(k.get("baslangic"), yer + " baslangic")
+                  if k.get("bitis"):
+                      kontrol_tarih(k.get("bitis"), yer + " bitis")
+                      if k.get("baslangic") and k["bitis"] < k["baslangic"]:
+                          hata.append(f"{yer}: bitis tarihi baslangictan once")
+
+          # --- diger tum json dosyalari: en azindan sozdizimi ---
+          for dosya in glob.glob("*.json"):
+              with open(dosya, encoding="utf-8") as f:
+                  try:
+                      json.load(f)
+                  except json.JSONDecodeError as e:
+                      hata.append(f"{dosya}: bozuk JSON -> {e}")
+
+          if hata:
+              print("\nDOGRULAMA BASARISIZ:\n")
+              for h in hata:
+                  print("  - " + h)
+              print("\nBu degisiklik yayinlanmadi. Yukaridaki hatalari duzeltip tekrar push'la.\n")
+              sys.exit(1)
+
+          print("Tum JSON dosyalari gecerli.")
+          PY
+
+  cdn-temizle:
+    name: jsDelivr onbellegini temizle
+    needs: dogrula
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Purge
+        run: |
+          for dosya in *.json; do
+            url="https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/${dosya}"
+            echo "Temizleniyor: $dosya"
+            curl -s -m 30 "$url" || echo "  (purge cevap vermedi, atlandi)"
+            echo ""
+          done

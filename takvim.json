@@ -1,0 +1,71 @@
+{
+  "sema_versiyonu": 1,
+  "guncelleme_tarihi": "2026-08-19",
+  "kayitlar": [
+    {
+      "id": "auzef-2026-guz-kayit-yenileme",
+      "kurum": "AUZEF",
+      "baslik": "Güz Dönemi Kayıt Yenileme",
+      "aciklama": "Ders seçimi ve harç ödemesi bu tarihler arasında yapılır. Kayıt yenilemeyen öğrenciler döneme devam edemez.",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-18",
+      "durum": "tahmini",
+      "tip": "BASVURU",
+      "link": "https://lolonolo.com/auzef/"
+    },
+    {
+      "id": "auzef-2026-guz-ders-baslangic",
+      "kurum": "AUZEF",
+      "baslik": "Güz Dönemi Derslerin Başlaması",
+      "aciklama": "Canlı dersler ve ders materyalleri sisteme açılır.",
+      "baslangic": "2026-09-28",
+      "durum": "tahmini",
+      "tip": "DUYURU",
+      "link": ""
+    },
+    {
+      "id": "auzef-2026-guz-vize",
+      "kurum": "AUZEF",
+      "baslik": "Güz Dönemi Ara Sınavı (Vize)",
+      "aciklama": "Vize sınavları hafta sonu iki oturum halinde yapılır. Sınav yerini AUZEF sisteminden kontrol etmeyi unutma.",
+      "baslangic": "2026-12-05",
+      "bitis": "2026-12-06",
+      "durum": "tahmini",
+      "tip": "VIZE",
+      "link": "https://lolonolo.com/auzef/"
+    },
+    {
+      "id": "auzef-2027-guz-final",
+      "kurum": "AUZEF",
+      "baslik": "Güz Dönemi Final Sınavı",
+      "aciklama": "",
+      "baslangic": "2027-01-09",
+      "bitis": "2027-01-10",
+      "durum": "tahmini",
+      "tip": "FINAL",
+      "link": ""
+    },
+    {
+      "id": "anadolu-2026-guz-vize",
+      "kurum": "ANADOLU",
+      "baslik": "Güz Dönemi Ara Sınavı",
+      "aciklama": "Anadolu AÖF ara sınavları.",
+      "baslangic": "2026-12-12",
+      "bitis": "2026-12-13",
+      "durum": "tahmini",
+      "tip": "VIZE",
+      "link": ""
+    },
+    {
+      "id": "ata-2026-guz-vize",
+      "kurum": "ATA",
+      "baslik": "Güz Dönemi Vize Sınavı",
+      "aciklama": "Atatürk Üniversitesi Açıköğretim vize sınavları online yapılır.",
+      "baslangic": "2026-12-19",
+      "bitis": "2026-12-20",
+      "durum": "tahmini",
+      "tip": "VIZE",
+      "link": ""
+    }
+  ]
+}
