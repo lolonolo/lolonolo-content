@@ -30,7 +30,7 @@ sadece görüntüler.
 | Alan | Zorunlu | Açıklama |
 |---|---|---|
 | `id` | ✅ | Benzersiz. Örn: `auzef-2026-guz-vize`. Bir kez verilir, değişmez. |
-| `kurum` | ✅ | `AUZEF` / `ANADOLU` / `ATA` / `SEGEM` |
+| `kurum` | ✅ | `AUZEF` / `ANADOLU` / `ATA` / `ANKUZEF` / `SEGEM` / `DIGER` |
 | `baslik` | ✅ | Kısa ve net. Örn: "Güz Dönemi Ara Sınavı (Vize)" |
 | `aciklama` | – | Uzun olabilir. Boş bırakılabilir (`""`). |
 | `baslangic` | ✅ | `YYYY-MM-DD` |
