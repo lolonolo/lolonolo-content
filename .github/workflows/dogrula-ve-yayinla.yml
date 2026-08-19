@@ -101,8 +101,14 @@ jobs:
             for dosya in *.json; do
               url="https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/${dosya}"
               echo "Temizleniyor: $dosya"
+              # jsDelivr "throttled: true" da dönebilir (art arda purge'de
+              # normal, zararsız) — bu adımı hiçbir durumda başarısız
+              # sayma, sadece bilgi amaçlı logla.
               curl -s -m 30 "$url" || echo "  (purge cevap vermedi, atlandi)"
               echo ""
             done
-            [ "$tur" = "1" ] && sleep 10
+            if [ "$tur" = "1" ]; then
+              sleep 10
+            fi
           done
+          exit 0
