@@ -37,7 +37,7 @@ jobs:
                       print(f"HATA: takvim.json bozuk JSON -> {e}")
                       sys.exit(1)
 
-              KURUM = {"AUZEF", "ANADOLU", "ATA", "SEGEM"}
+              KURUM = {"AUZEF", "ANADOLU", "ATA", "ANKUZEF", "SEGEM"}
               TIP   = {"VIZE","FINAL","BUTUNLEME","UCDERS","BASVURU","DUYURU"}
               DURUM = {"kesinlesti", "tahmini"}
 
