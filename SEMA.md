@@ -52,6 +52,45 @@ Resmî takvim açıklandığında `tahmini` → `kesinlesti` yapmayı unutma.
 Tarih de değiştiyse `baslangic`'ı güncelle — kullanıcılara otomatik
 "tarih güncellendi" bildirimi gider.
 
+---
+
+## duyurular.json — LoloHaber akışı
+
+Şu ana kadar duyurular tamamen push bildirime bağlıydı: bildirim izni
+vermeyen ya da teslimatı kaçıran kullanıcı hiçbir şey görmüyordu. Bu dosya
+o sorunu çözer — uygulama her açılışta bunu çeker, push'tan bağımsız
+**garantili** bir duyuru akışı oluşturur. Push artık sadece "yeni bir şey
+var" tetikleyicisi; asıl içerik buradan gelir.
+
+### Kayıt alanları
+
+| Alan | Zorunlu | Açıklama |
+|---|---|---|
+| `id` | ✅ | Benzersiz. Bir kez verilir, değişmez (değiştirirsen kullanıcıya tekrar "yeni" gibi görünür). |
+| `baslik` | ✅ | Kısa başlık. |
+| `icerik` | ✅ | Uzun olabilir — push payload sınırı yok artık. |
+| `kategori` | ✅ | `DUYURU` / `SINAV` / `ICERIK` / `ACIL` |
+| `tarih` | ✅ | `YYYY-MM-DD` — listede sıralama ve gösterim için. |
+| `baslangic` | – | Bu tarihten önce kullanıcıya gösterilmez. Boşsa hemen görünür. |
+| `bitis` | – | Bu tarihten sonra otomatik kaybolur. Boşsa süresiz görünür. |
+| `hedef` | – | `quiz:ID` (uygulama içi, ileride) / `web:URL` (bağlantı butonu) / boş |
+| `bolum` | – | Opsiyonel filtre etiketi (şu an UI'da kullanılmıyor, ileride eklenebilir). |
+
+### `baslangic` / `bitis` ne işe yarar
+
+Bir kampanya duyurusunu "5 gün sonra otomatik kaybolsun" diye ayarlamak
+istersen `bitis`'i doldur — o tarihten sonra dosyadan silmene gerek kalmaz,
+uygulama kendisi gizler. `baslangic` ise ileri tarihli bir duyuruyu
+şimdiden hazırlayıp push'lamana izin verir, ama o tarihe kadar kimse görmez.
+
+### `hedef`
+
+- `web:https://lolonolo.com/...` → duyuru kartında "Devamını Oku" butonu
+  bu linke gider.
+- `quiz:SORU_ID` → şu an sadece taşınır, uygulama henüz buna göre
+  yönlendirme yapmıyor (gelecekte quiz ekranına derin bağlantı için ayrılmış).
+- Boş → buton görünmez, sadece metin.
+
 ### `kurum` alanı
 
 Kullanıcı uygulamada kendi kurumunu seçiyor. AUZEF öğrencisine `ATA`

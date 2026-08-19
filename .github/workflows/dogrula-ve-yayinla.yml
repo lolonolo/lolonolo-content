@@ -62,6 +62,39 @@ jobs:
                       if k.get("baslangic") and k["bitis"] < k["baslangic"]:
                           hata.append(f"{yer}: bitis tarihi baslangictan once")
 
+          # --- duyurular.json ---
+          if os.path.exists("duyurular.json"):
+              with open("duyurular.json", encoding="utf-8") as f:
+                  try:
+                      d = json.load(f)
+                  except json.JSONDecodeError as e:
+                      print(f"HATA: duyurular.json bozuk JSON -> {e}")
+                      sys.exit(1)
+
+              KATEGORI = {"DUYURU", "SINAV", "ICERIK", "ACIL"}
+
+              idler2 = set()
+              for i, k in enumerate(d.get("duyurular", [])):
+                  yer = f"duyurular.json duyuru[{i}] (id={k.get('id','YOK')})"
+                  for alan in ("id","baslik","icerik","kategori","tarih"):
+                      if not k.get(alan):
+                          hata.append(f"{yer}: '{alan}' zorunlu ve bos olamaz")
+                  if k.get("id") in idler2:
+                      hata.append(f"{yer}: id tekrar ediyor")
+                  idler2.add(k.get("id"))
+                  if k.get("kategori") not in KATEGORI:
+                      hata.append(f"{yer}: kategori '{k.get('kategori')}' gecersiz. Gecerli: {sorted(KATEGORI)}")
+                  kontrol_tarih(k.get("tarih"), yer + " tarih")
+                  if k.get("baslangic"):
+                      kontrol_tarih(k.get("baslangic"), yer + " baslangic")
+                  if k.get("bitis"):
+                      kontrol_tarih(k.get("bitis"), yer + " bitis")
+                      if k.get("baslangic") and k["bitis"] < k["baslangic"]:
+                          hata.append(f"{yer}: bitis tarihi baslangictan once")
+                  hedef = k.get("hedef") or ""
+                  if hedef and not (hedef.startswith("quiz:") or hedef.startswith("web:")):
+                      hata.append(f"{yer}: hedef '{hedef}' gecersiz -- 'quiz:ID' veya 'web:URL' ile baslamali")
+
           # --- diger tum json dosyalari: en azindan sozdizimi ---
           for dosya in glob.glob("*.json"):
               with open(dosya, encoding="utf-8") as f:
