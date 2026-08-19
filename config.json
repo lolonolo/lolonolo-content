@@ -7,7 +7,7 @@
     "video_dersler": { "acik": true, "mesaj": "" },
     "lolonolo_ai": { "acik": true, "mesaj": "" },
     "puan_hesapla": { "acik": true, "mesaj": "" },
-    "sinav_takvimi": { "acik": true, "mesaj": "" },
+    "sinav_takvimi": { "acik": false, "mesaj": "TEST: uçtan uca kill switch doğrulaması" },
     "lolohaber": { "acik": true, "mesaj": "" }
   },
 
