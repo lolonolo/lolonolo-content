@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-08-19",
+  "guncelleme_tarihi": "2026-08-23",
   "duyurular": [
+    {
+      "id": "panel-1787518126272",
+      "baslik": "Çıkmış Soruları İndir",
+      "icerik": "Premium üyelerimize müjde\npdf.lolonolo.com",
+      "kategori": "DUYURU",
+      "tarih": "2026-08-23",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "web:https://pdf.lolonolo.com",
+      "bolum": ""
+    },
     {
       "id": "panel-1787172795984",
       "baslik": "güncelelme denemesi",
