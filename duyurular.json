@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-08-28",
+  "guncelleme_tarihi": "2026-08-29",
   "duyurular": [
+    {
+      "id": "panel-1788012692353",
+      "baslik": "Kullanıcı Giriş Sorunu",
+      "icerik": "Kullanıcı Giriş sorunu yaşıyorsanız lütfen uygulamayı güncelleyin.\nÜugulama girişi değişti.",
+      "kategori": "DUYURU",
+      "tarih": "2026-08-29",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "",
+      "bolum": ""
+    },
     {
       "id": "panel-1787946839844",
       "baslik": "Mezuniyete Üç Ders Sınavı giriş belgeleri yayınlandı!",
