@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-08-29",
+  "guncelleme_tarihi": "2026-09-03",
   "duyurular": [
+    {
+      "id": "panel-1788454688723",
+      "baslik": "Uygulamayı Güncelle",
+      "icerik": "Uygulamayı Güncelle\n03.09.2926",
+      "kategori": "ACIL",
+      "tarih": "2026-09-03",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "web:https://apps.apple.com/tr/app/ogrenme-yonetim-sistemi/id1597012503",
+      "bolum": ""
+    },
     {
       "id": "panel-1788012974065",
       "baslik": "Kullanıcı Giriş Sorunu",
