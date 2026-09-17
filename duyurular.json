@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-09-03",
+  "guncelleme_tarihi": "2026-09-17",
   "duyurular": [
+    {
+      "id": "panel-1789640945853",
+      "baslik": "Üyelikle pdf indirin",
+      "icerik": "Çıkmış sorualrı indir.",
+      "kategori": "DUYURU",
+      "tarih": "2026-09-17",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "web:https://pdf.lolonolo.com/",
+      "bolum": ""
+    },
     {
       "id": "panel-1788454688723",
       "baslik": "Uygulamayı Güncelle",
