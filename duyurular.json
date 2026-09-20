@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-09-17",
+  "guncelleme_tarihi": "2026-09-20",
   "duyurular": [
+    {
+      "id": "panel-1789909202334",
+      "baslik": "Tüm çıkmış Soru Videoları",
+      "icerik": "Tüm çıkmış Soru Videoları",
+      "kategori": "DUYURU",
+      "tarih": "2026-09-20",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "web:https://www.youtube.com/c/lolonolo_com",
+      "bolum": ""
+    },
     {
       "id": "panel-1789640945853",
       "baslik": "Üyelikle pdf indirin",
