@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-09-21",
+  "guncelleme_tarihi": "2026-10-01",
   "duyurular": [
+    {
+      "id": "panel-1790843941877",
+      "baslik": "ANKUZEF",
+      "icerik": "Menuye ANKUZEF eklendi.",
+      "kategori": "DUYURU",
+      "tarih": "2026-10-01",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "web:https://lolonolo.com/ankuzef/",
+      "bolum": ""
+    },
     {
       "id": "panel-1789974920156",
       "baslik": "AUZEF Yeni Kayıt Muafiyet",
