@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-10-05",
+  "guncelleme_tarihi": "2026-10-10",
   "duyurular": [
+    {
+      "id": "panel-1791631155547",
+      "baslik": "Sınavsız 2.Üniversite",
+      "icerik": "Auzef sınavsız 2. üniversite son başvuru tarihi 12 Ekim son gün",
+      "kategori": "DUYURU",
+      "tarih": "2026-10-10",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "web:https://lolonolo.com/ikinci-universite/",
+      "bolum": ""
+    },
     {
       "id": "panel-1791187265590",
       "baslik": "Anadolu AÖF: Ders seçimi başladı",
