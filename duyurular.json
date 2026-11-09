@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-11-06",
+  "guncelleme_tarihi": "2026-11-09",
   "duyurular": [
+    {
+      "id": "panel-1794246185398",
+      "baslik": "ANKUZEF",
+      "icerik": "uygulama Güncellendi Ankuzef eklendi.",
+      "kategori": "DUYURU",
+      "tarih": "2026-11-09",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "",
+      "bolum": ""
+    },
     {
       "id": "panel-1793992856670",
       "baslik": "Auzef Vize Giriş Belgeleri Yayımlandı",
