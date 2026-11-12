@@ -1,7 +1,18 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-11-09",
+  "guncelleme_tarihi": "2026-11-12",
   "duyurular": [
+    {
+      "id": "panel-1794483273524",
+      "baslik": "ANKUZEF",
+      "icerik": "Ana ekran menusunda Ankuzef yoksa uygulamayı güncelle",
+      "kategori": "DUYURU",
+      "tarih": "2026-11-12",
+      "baslangic": "",
+      "bitis": "",
+      "hedef": "web:https://play.google.com/store/apps/details?id=com.lolonolo.ogrenmeyonetimsistemi&hl=tr",
+      "bolum": ""
+    },
     {
       "id": "panel-1794246185398",
       "baslik": "ANKUZEF",
