@@ -1,16 +1,32 @@
 {
   "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-08-19",
-
+  "guncelleme_tarihi": "2026-11-27",
   "ekranlar": {
-    "sinav_merkezi": { "acik": true, "mesaj": "" },
-    "video_dersler": { "acik": true, "mesaj": "" },
-    "lolonolo_ai": { "acik": true, "mesaj": "" },
-    "puan_hesapla": { "acik": true, "mesaj": "" },
-    "sinav_takvimi": { "acik": true, "mesaj": "" },
-    "lolohaber": { "acik": true, "mesaj": "" }
+    "sinav_merkezi": {
+      "acik": false,
+      "mesaj": "kapalı"
+    },
+    "video_dersler": {
+      "acik": true,
+      "mesaj": ""
+    },
+    "lolonolo_ai": {
+      "acik": true,
+      "mesaj": ""
+    },
+    "puan_hesapla": {
+      "acik": true,
+      "mesaj": ""
+    },
+    "sinav_takvimi": {
+      "acik": true,
+      "mesaj": ""
+    },
+    "lolohaber": {
+      "acik": true,
+      "mesaj": ""
+    }
   },
-
   "surum_uyarisi": {
     "aktif": false,
     "zorunlu": false,
