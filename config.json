@@ -23,8 +23,8 @@
       "mesaj": "kapalı"
     },
     "lolohaber": {
-      "acik": true,
-      "mesaj": ""
+      "acik": false,
+      "mesaj": "kapalı"
     }
   },
   "surum_uyarisi": {
