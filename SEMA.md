@@ -145,14 +145,14 @@ Kullanıcıların siteye girişi bulmasını sağlayan asıl kapı budur.
 |---|---|
 | `baslik` | Kartın büyük başlığı. Örn: "Ders İçerikleri" |
 | `aciklama` | Altındaki kısa açıklama |
-| `buton` | Butonun yazısı. Örn: "İçeriklere Git" |
+| `buton` | Kartın altındaki ana sayfa düğmesinin yazısı. Örn: "Tüm İçerikler" |
 | `url` | Dokununca uygulama içinde açılacak adres. **`https://` ile başlamalı.** |
 
 Boş bırakılan alan uygulamadaki varsayılana düşer — kartı kaybetmezsin.
 
 ### `programlar` — kurum kısayolları
 
-Ana kartın hemen altındaki kurum düğmeleri (AUZEF, Anadolu AÖF…). Sıra
+Ana kartın içindeki "Kurumunu seç" düğmeleri (AUZEF, Anadolu AÖF…). Sıra
 dosyadaki sıradır. Yeni bir kurum eklemek için **store güncellemesi gerekmez**,
 listeye bir satır eklemek yeter.
 
