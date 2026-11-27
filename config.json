@@ -19,8 +19,8 @@
       "mesaj": "kapalı"
     },
     "sinav_takvimi": {
-      "acik": true,
-      "mesaj": ""
+      "acik": false,
+      "mesaj": "kapalı"
     },
     "lolohaber": {
       "acik": true,
