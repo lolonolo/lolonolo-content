@@ -11,8 +11,8 @@
       "mesaj": "kapalı"
     },
     "lolonolo_ai": {
-      "acik": true,
-      "mesaj": ""
+      "acik": false,
+      "mesaj": "kapalı"
     },
     "puan_hesapla": {
       "acik": true,
