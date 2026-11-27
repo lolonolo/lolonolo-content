@@ -95,6 +95,71 @@ jobs:
                   if hedef and not (hedef.startswith("quiz:") or hedef.startswith("web:")):
                       hata.append(f"{yer}: hedef '{hedef}' gecersiz -- 'quiz:ID' veya 'web:URL' ile baslamali")
 
+          # --- config.json ---
+          if os.path.exists("config.json"):
+              with open("config.json", encoding="utf-8") as f:
+                  try:
+                      c = json.load(f)
+                  except json.JSONDecodeError as e:
+                      print(f"HATA: config.json bozuk JSON -> {e}")
+                      sys.exit(1)
+
+              def https_mi(deger, yer, bos_olabilir=True):
+                  if not deger:
+                      if not bos_olabilir:
+                          hata.append(f"{yer}: bos olamaz")
+                      return
+                  if not str(deger).startswith("https://"):
+                      hata.append(f"{yer}: 'https://' ile baslamali, gelen: '{deger}'")
+
+              ak = c.get("ana_kart")
+              if ak is not None:
+                  if not isinstance(ak, dict):
+                      hata.append("config.json ana_kart: obje olmali")
+                  else:
+                      https_mi(ak.get("url"), "config.json ana_kart.url")
+
+              pr = c.get("programlar")
+              if pr is not None:
+                  if not isinstance(pr, list):
+                      hata.append("config.json programlar: liste olmali")
+                  else:
+                      pidler = set()
+                      for i, p in enumerate(pr):
+                          yer = f"config.json programlar[{i}] (id={p.get('id','YOK') if isinstance(p, dict) else '?'})"
+                          if not isinstance(p, dict):
+                              hata.append(f"{yer}: obje olmali"); continue
+                          for alan in ("id", "baslik", "url"):
+                              if not p.get(alan):
+                                  hata.append(f"{yer}: '{alan}' zorunlu ve bos olamaz")
+                          if p.get("id") in pidler:
+                              hata.append(f"{yer}: id tekrar ediyor")
+                          pidler.add(p.get("id"))
+                          https_mi(p.get("url"), yer + " url")
+                          if p.get("renk") and not re.fullmatch(r"#[0-9A-Fa-f]{6}", p["renk"]):
+                              hata.append(f"{yer}: renk '#RRGGBB' olmali, gelen: '{p['renk']}'")
+
+              db = c.get("duyuru_bandi")
+              if db is not None:
+                  if not isinstance(db, dict):
+                      hata.append("config.json duyuru_bandi: obje olmali")
+                  else:
+                      if db.get("aktif") and not db.get("metin"):
+                          hata.append("config.json duyuru_bandi: aktifken 'metin' bos olamaz")
+                      https_mi(db.get("link"), "config.json duyuru_bandi.link")
+                      if db.get("renk") and db["renk"] not in {"turuncu", "mavi", "yesil", "kirmizi"}:
+                          hata.append(f"config.json duyuru_bandi.renk gecersiz: '{db['renk']}'")
+                      if db.get("bitis"):
+                          kontrol_tarih(db["bitis"], "config.json duyuru_bandi.bitis")
+
+              su = c.get("surum_uyarisi")
+              if isinstance(su, dict):
+                  for alan in ("min_android_build", "min_ios_build"):
+                      if alan in su and not isinstance(su[alan], int):
+                          hata.append(f"config.json surum_uyarisi.{alan}: tam sayi olmali")
+                  https_mi(su.get("android_link"), "config.json surum_uyarisi.android_link")
+                  https_mi(su.get("ios_link"), "config.json surum_uyarisi.ios_link")
+
           # --- diger tum json dosyalari: en azindan sozdizimi ---
           for dosya in glob.glob("*.json"):
               with open(dosya, encoding="utf-8") as f:

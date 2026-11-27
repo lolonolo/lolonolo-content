@@ -126,11 +126,64 @@ Sorun çözülünce `true` yap. **Store onayı beklemene gerek kalmaz.**
 | `min_ios_build` | Bu build numarasının altındaki iOS sürümlerine gösterilir |
 
 > **Dikkat:** iOS ve Android'in numaraları birbirinden bağımsız.
-> Android şu an `22`, iOS şu an `4`. Ayrı ayrı yaz.
+> Kasım 2026 itibarıyla Android `26`, iOS `9`. Ayrı ayrı yaz.
+> (Android: `app/build.gradle.kts` → `versionCode`; iOS: Xcode → `CURRENT_PROJECT_VERSION`.)
 > `0` yazarsan o platformda kimseye gösterilmez.
 
 `zorunlu: true` güçlü bir silahtır — yanlış numarayla herkesi kilitleyebilirsin.
 Önce `zorunlu: false` ile dene.
+
+> `surum_uyarisi`, uygulamaların **sema 2** sürümünden (iOS 3.8 / Android 27)
+> itibaren ekranda gösterilir. Daha eski sürümler bu alanı okur ama göstermez.
+
+### `ana_kart` — ana ekrandaki büyük "Ders İçerikleri" kartı
+
+Ana ekranın en üstündeki, lolonolo.com içeriğine giden büyük turuncu kart.
+Kullanıcıların siteye girişi bulmasını sağlayan asıl kapı budur.
+
+| Alan | Açıklama |
+|---|---|
+| `baslik` | Kartın büyük başlığı. Örn: "Ders İçerikleri" |
+| `aciklama` | Altındaki kısa açıklama |
+| `buton` | Butonun yazısı. Örn: "İçeriklere Git" |
+| `url` | Dokununca uygulama içinde açılacak adres. **`https://` ile başlamalı.** |
+
+Boş bırakılan alan uygulamadaki varsayılana düşer — kartı kaybetmezsin.
+
+### `programlar` — kurum kısayolları
+
+Ana kartın hemen altındaki kurum düğmeleri (AUZEF, Anadolu AÖF…). Sıra
+dosyadaki sıradır. Yeni bir kurum eklemek için **store güncellemesi gerekmez**,
+listeye bir satır eklemek yeter.
+
+| Alan | Zorunlu | Açıklama |
+|---|---|---|
+| `id` | ✅ | Benzersiz, küçük harf. Örn: `auzef` |
+| `baslik` | ✅ | Düğmede görünen ad |
+| `alt` | – | Küçük alt yazı. Örn: "İstanbul Üniversitesi" |
+| `url` | ✅ | `https://` ile başlamalı |
+| `renk` | – | `#RRGGBB`. Boşsa turuncu. |
+
+Liste boş ya da bozuksa uygulama kendi içindeki varsayılan listeyi gösterir.
+
+### `duyuru_bandi` — ana ekranda ince duyuru şeridi
+
+Push bildirimi kadar rahatsız etmeyen, ana ekranın üstünde duran kısa bir
+mesaj. "Vize giriş belgeleri yayımlandı" gibi birkaç günlük şeyler için.
+
+| Alan | Açıklama |
+|---|---|
+| `aktif` | `true` ise görünür |
+| `metin` | Tek satırlık mesaj (kısa tut, ~80 karakter) |
+| `link` | Doluysa şeride dokununca uygulama içinde açılır. `https://` ile başlamalı. |
+| `renk` | `turuncu` / `mavi` / `yesil` / `kirmizi` |
+| `bitis` | `YYYY-MM-DD`. Bu tarihten sonra kendiliğinden kaybolur. Boşsa süresiz. |
+
+Kullanıcı şeridi ✕ ile kapatabilir; aynı metin bir daha gösterilmez.
+Metni değiştirirsen yeniden görünür.
+
+> **Apple notu:** Bu alanlar *içerik ve yönlendirme* içindir. Uzaktan yeni bir
+> özellik açıp kapatmak için kullanılmamalı (App Store 2.3.1 / 4.7).
 
 ---
 

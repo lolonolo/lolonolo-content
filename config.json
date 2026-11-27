@@ -1,6 +1,6 @@
 {
-  "sema_versiyonu": 1,
-  "guncelleme_tarihi": "2026-08-19",
+  "sema_versiyonu": 2,
+  "guncelleme_tarihi": "2026-11-27",
 
   "ekranlar": {
     "sinav_merkezi": { "acik": true, "mesaj": "" },
@@ -11,6 +11,29 @@
     "lolohaber": { "acik": true, "mesaj": "" }
   },
 
+  "ana_kart": {
+    "baslik": "Ders İçerikleri",
+    "aciklama": "Çıkmış sorular, ders notları, deneme sınavları ve ünite özetleri",
+    "buton": "İçeriklere Git",
+    "url": "https://lolonolo.com/"
+  },
+
+  "programlar": [
+    { "id": "auzef", "baslik": "AUZEF", "alt": "İstanbul Üniversitesi", "url": "https://lolonolo.com/auzef", "renk": "#3373F2" },
+    { "id": "anadolu", "baslik": "Anadolu AÖF", "alt": "Açıköğretim Fakültesi", "url": "https://lolonolo.com/anadolu-aof", "renk": "#FF730D" },
+    { "id": "ata", "baslik": "Atatürk AÖF", "alt": "Açıköğretim Fakültesi", "url": "https://lolonolo.com/ataturk-aof/", "renk": "#E12E10" },
+    { "id": "ankuzef", "baslik": "ANKUZEF", "alt": "Ankara Üniversitesi", "url": "https://lolonolo.com/ankuzef/", "renk": "#7B3FC4" },
+    { "id": "segem", "baslik": "SEGEM", "alt": "Sigorta Teknik Eğitimi", "url": "https://lolonolo.com/sertifika/segem/", "renk": "#1A9E47" }
+  ],
+
+  "duyuru_bandi": {
+    "aktif": false,
+    "metin": "",
+    "link": "",
+    "renk": "turuncu",
+    "bitis": ""
+  },
+
   "surum_uyarisi": {
     "aktif": false,
     "zorunlu": false,
@@ -19,6 +42,6 @@
     "min_android_build": 0,
     "min_ios_build": 0,
     "android_link": "https://play.google.com/store/apps/details?id=com.lolonolo.ogrenmeyonetimsistemi",
-    "ios_link": "https://apps.apple.com/tr/app/id0000000000"
+    "ios_link": "https://apps.apple.com/tr/app/ogrenme-yonetim-sistemi/id1597012503"
   }
 }
