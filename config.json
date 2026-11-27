@@ -23,7 +23,7 @@
       "mesaj": "kapalı"
     },
     "lolohaber": {
-      "acik": false,
+      "acik": true,
       "mesaj": "kapalı"
     }
   },
