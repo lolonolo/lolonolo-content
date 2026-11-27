@@ -139,6 +139,10 @@ jobs:
                           if p.get("renk") and not re.fullmatch(r"#[0-9A-Fa-f]{6}", p["renk"]):
                               hata.append(f"{yer}: renk '#RRGGBB' olmali, gelen: '{p['renk']}'")
 
+              uk = c.get("uye_karti")
+              if uk is not None and not isinstance(uk, dict):
+                  hata.append("config.json uye_karti: obje olmali")
+
               db = c.get("duyuru_bandi")
               if db is not None:
                   if not isinstance(db, dict):

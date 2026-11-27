@@ -166,6 +166,23 @@ listeye bir satır eklemek yeter.
 
 Liste boş ya da bozuksa uygulama kendi içindeki varsayılan listeyi gösterir.
 
+### `uye_karti` — giriş yapmamış kullanıcıya üye girişi kartı
+
+Ana ekranın üstünde, yalnızca **giriş yapmamış** kullanıcıya görünen kart.
+"Giriş Yap" düğmesi sitenin giriş sayfasını açar. Giriş yapınca kart kaybolur.
+
+| Alan | Açıklama |
+|---|---|
+| `aktif` | `false` ise kart hiç gösterilmez |
+| `baslik` | Örn: "Üye misin?" |
+| `aciklama` | Kısa açıklama |
+| `buton` | Düğme yazısı. Örn: "Üye Girişi" (hafif nabız animasyonlu) |
+
+> **App Store notu (iOS):** Uygulama dışında satılan bir üyeliğe *satın alma
+> çağrısı* ("üye ol", "satın al", fiyat, bağlantı) App Store 3.1.1 gereği
+> reddedilebilir. Var olan üyeyi giriş yapmaya çağırmak güvenli. İnceleme
+> sırasında sorun çıkarsa metni panelden yumuşatabilirsin.
+
 ### `duyuru_bandi` — ana ekranda ince duyuru şeridi
 
 Push bildirimi kadar rahatsız etmeyen, ana ekranın üstünde duran kısa bir

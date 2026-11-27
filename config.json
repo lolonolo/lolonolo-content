@@ -26,6 +26,13 @@
     { "id": "segem", "baslik": "SEGEM", "alt": "Sigorta Teknik Eğitimi", "url": "https://lolonolo.com/sertifika/segem/", "renk": "#1A9E47" }
   ],
 
+  "uye_karti": {
+    "aktif": true,
+    "baslik": "Üye misin?",
+    "aciklama": "Giriş yap, üyelere özel içeriklere ve ayrıcalıklara eriş.",
+    "buton": "Üye Girişi"
+  },
+
   "duyuru_bandi": {
     "aktif": false,
     "metin": "",
