@@ -175,7 +175,7 @@ Ana ekranın üstünde, yalnızca **giriş yapmamış** kullanıcıya görünen 
 |---|---|
 | `aktif` | `false` ise kart hiç gösterilmez |
 | `baslik` | Örn: "Üye misin?" |
-| `aciklama` | Kısa açıklama |
+| `aciklama` | Kısa açıklama. **Boşsa gösterilmez** (varsayılan boş). |
 | `buton` | Düğme yazısı. Örn: "Üye Girişi" (hafif nabız animasyonlu) |
 
 > **App Store notu (iOS):** Uygulama dışında satılan bir üyeliğe *satın alma
