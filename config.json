@@ -3,7 +3,7 @@
   "guncelleme_tarihi": "2026-11-27",
   "ekranlar": {
     "sinav_merkezi": {
-      "acik": false,
+      "acik": true,
       "mesaj": "kapalı"
     },
     "video_dersler": {
