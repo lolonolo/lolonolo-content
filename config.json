@@ -15,7 +15,7 @@
       "mesaj": "kapalı"
     },
     "puan_hesapla": {
-      "acik": false,
+      "acik": true,
       "mesaj": "kapalı"
     },
     "sinav_takvimi": {
