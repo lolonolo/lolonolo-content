@@ -7,7 +7,7 @@
       "mesaj": "kapalı"
     },
     "video_dersler": {
-      "acik": false,
+      "acik": true,
       "mesaj": "kapalı"
     },
     "lolonolo_ai": {
